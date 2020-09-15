@@ -9,7 +9,7 @@ total_elements = []
 #Procmon logic
 ##### 
 #create PML file
-create_pml = subprocess.Popen(["Procmon.exe", "/Quiet", "/LoadConfig", "2.pmc", "/BackingFile", "adobeup.pml"], stdout=subprocess.PIPE, shell=True)
+create_pml = subprocess.Popen(["Procmon.exe", "/Quiet", "/LoadConfig", "2.pmc", "/BackingFile", "out_pml.pml"], stdout=subprocess.PIPE, shell=True)
 (out4, err4) = create_pml.communicate()
 
 ####
@@ -19,12 +19,12 @@ terminate_procmon = subprocess.Popen(["Procmon.exe", "/Terminate"], stdout=subpr
 
 ####
 #create csv
-createcsv = subprocess.Popen('Procmon.exe /Quiet /OpenLog adobeup.pml /SaveApplyFilter /SaveAs adobeup.csv', stdout=subprocess.PIPE, shell=True)
+createcsv = subprocess.Popen('Procmon.exe /Quiet /OpenLog out_pml.pml /SaveApplyFilter /SaveAs output.csv', stdout=subprocess.PIPE, shell=True)
 (out3, err3) = createcsv.communicate()
 
 
 # Read CSV file
-with open('adobeup.csv') as csv_file:
+with open('output.csv') as csv_file:
  csv_reader = csv.reader(csv_file, delimiter = ',')
  line_count=0
  
@@ -38,7 +38,7 @@ with open('adobeup.csv') as csv_file:
 # Remove duplicates   
 total_elements = list(dict.fromkeys(total_elements))
 
-out =  b'desktop-epvoj7k\\test_sym'
+out =  b'##username'
 out =  out.lower()
 #print(out)
 
