@@ -1,0 +1,7 @@
+Steps to run the code:
+1. Download all the files.
+2. Modify pmc_modify.py
+  a) enter name of the process that need to be monitored
+3. Modify detect.py
+  a) enter name of normal user a user 1 and privileged user as user 2
+4. Run detect.py with Admin privilege
