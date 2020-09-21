@@ -1,5 +1,5 @@
 Steps to run the code:
-1. Download all the files.
+1. Download Procmon.exe and accesschk64.exe and store them in the same folder as other files of this repo. Please ensure the there is no change in the names of the files/executables.
 2. Modify pmc_modify.py
   a) enter name of the process that need to be monitored
 3. Modify detect.py
