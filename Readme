@@ -5,4 +5,4 @@ Steps to run the code:
 3. Modify detect.py
   a) enter name of normal user a user 1 and privileged user as user 2
 4. Run detect.py with Admin privilege
-5. Run the application the need to be tested with Admin privileges (user 2).
+5. Run the application that needs to be tested with Admin privileges (user 2).
