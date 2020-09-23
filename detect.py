@@ -45,8 +45,8 @@ admin = b'RW #user 2'
 for i in total_elements:
   return_value = subprocess.Popen(["accesschk64.exe", "/AcceptEula", "-nobanner", i], stdout=subprocess.PIPE, shell=True)
   (out2, err2) = return_value.communicate()
-  result = out2.find(out)
+  result = out2.find(admin)
   if result != -1:
-    result2 = out2.find(admin)
+    result2 = out2.find(out)
     if result2 != -1:
         print("Issue found for", i)
