@@ -38,15 +38,30 @@ with open('output.csv') as csv_file:
 # Remove duplicates   
 total_elements = list(dict.fromkeys(total_elements))
 
-out =  b'RW #user 1'
+out =  b'RW ##user1'
+usergr = b'RW BUILTIN\\Users'
 
-admin = b'RW #user 2'
 
+admin = b'RW ##user2'
+admingr = b'RW BUILTIN\Administrator'
+
+#print(out)
+
+#Check access at captured file
 for i in total_elements:
   return_value = subprocess.Popen(["accesschk64.exe", "/AcceptEula", "-nobanner", i], stdout=subprocess.PIPE, shell=True)
   (out2, err2) = return_value.communicate()
   result = out2.find(admin)
+  result2 = out2.find(out)
+  result3 = out2.find(usergr)
+  result4 = out2.find(admingr)
   if result != -1:
-    result2 = out2.find(out)
     if result2 != -1:
+        print("Issue found for", i)
+    elif result3 != -1:
+        print("Issue found for", i)
+  elif result4 != -1:
+    if result2 != -1:
+        print("Issue found for", i)
+    elif result3 != -1:
         print("Issue found for", i)
