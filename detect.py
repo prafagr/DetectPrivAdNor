@@ -9,17 +9,17 @@ total_elements = []
 #Procmon logic
 ##### 
 #create PML file
-create_pml = subprocess.Popen(["Procmon.exe", "/Quiet", "/LoadConfig", "2.pmc", "/BackingFile", "out_pml.pml"], stdout=subprocess.PIPE, shell=True)
+create_pml = subprocess.Popen(["Procmon64.exe", "/Quiet", "/LoadConfig", "2.pmc", "/BackingFile", "out_pml.pml"], stdout=subprocess.PIPE, shell=True)
 (out4, err4) = create_pml.communicate()
 
 ####
 #terminate process
-terminate_procmon = subprocess.Popen(["Procmon.exe", "/Terminate"], stdout=subprocess.PIPE, shell=True)
+terminate_procmon = subprocess.Popen(["Procmon64.exe", "/Terminate"], stdout=subprocess.PIPE, shell=True)
 (out4, err4) = terminate_procmon.communicate()
 
 ####
 #create csv
-createcsv = subprocess.Popen('Procmon.exe /Quiet /OpenLog out_pml.pml /SaveApplyFilter /SaveAs output.csv', stdout=subprocess.PIPE, shell=True)
+createcsv = subprocess.Popen('Procmon64.exe /Quiet /OpenLog out_pml.pml /SaveApplyFilter /SaveAs output.csv', stdout=subprocess.PIPE, shell=True)
 (out3, err3) = createcsv.communicate()
 
 
